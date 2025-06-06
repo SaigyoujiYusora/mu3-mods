@@ -1,0 +1,31 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnLimitGift", "Enhancements\UnLimitGift\UnLimitGift.csproj", "{49DAC4FD-6CE0-4A5E-A6EE-4DB9FE9AE047}"
+EndProject
+
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49DAC4FD-6CE0-4A5E-A6EE-4DB9FE9AE047}.Debug|x64.ActiveCfg = Debug|x64
+		{49DAC4FD-6CE0-4A5E-A6EE-4DB9FE9AE047}.Debug|x64.Build.0 = Debug|x64
+		{49DAC4FD-6CE0-4A5E-A6EE-4DB9FE9AE047}.Release|x64.ActiveCfg = Release|x64
+		{49DAC4FD-6CE0-4A5E-A6EE-4DB9FE9AE047}.Release|x64.Build.0 = Release|x64
+		
+		
+		{8FE7EB5D-5CE0-43A3-B8F7-455260A45B21}.Debug|x64.ActiveCfg = Debug|x64
+		{8FE7EB5D-5CE0-43A3-B8F7-455260A45B21}.Debug|x64.Build.0 = Debug|x64
+		{8FE7EB5D-5CE0-43A3-B8F7-455260A45B21}.Release|x64.ActiveCfg = Release|x64
+		{8FE7EB5D-5CE0-43A3-B8F7-455260A45B21}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9317002-F66D-4CDE-8FF5-FF2A0D8DC021}
+	EndGlobalSection
+EndGlobal

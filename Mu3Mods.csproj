@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net35</TargetFramework>
+        <Company>ChipTech</Company>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <Platforms>x64</Platforms>
+        <NoWarn>IDE0044,IDE0051,IDE0052,IDE1006,CS0414,CS0649,CS0626</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="mscorlib">
+            <HintPath>..\..\Common\mscorlib.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>..\..\Common\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+            <HintPath>..\..\Common\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp-firstpass">
+            <HintPath>..\..\Common\Assembly-CSharp-firstpass.dll</HintPath>
+        </Reference>
+        <Reference Include="AMDaemon.NET">
+            <HintPath>..\..\Common\AMDaemon.NET.dll</HintPath>
+        </Reference>
+        <PackageReference Include="monomod" Version="22.7.31.1"/>
+        <ProjectReference Include="..\..\Common\Assembly-CSharp_unpacked\Assembly-CSharp_unpacked.csproj"/>
+        <Compile Include="..\..\Common\Util.cs"/>
+    </ItemGroup>
+
+<!--    <Target Name="CopyDLLs" AfterTargets="Build" Condition="'$(Configuration)' == 'Debug' ">-->
+<!--        <Copy SourceFiles="$(TargetDir)$(AssemblyName).dll" DestinationFolder="$(LocalAppData)\STARTLINER\data\pkg\local-Mu3Mods\app\BepInEx\monomod"/>-->
+<!--    </Target>-->
+
+    <Target Name="Dist" AfterTargets="Build" Condition="'$(Configuration)' == 'Release' ">
+        <MakeDir Directories="..\..\dist\app"/>
+        <MakeDir Directories="dist\app\BepInEx\monomod"/>
+        <Copy SourceFiles="$(TargetDir)$(AssemblyName).dll" DestinationFolder="dist\app\BepInEx\monomod\mu3-mods-$(OutCategory)"/>
+        <Copy SourceFiles="..\..\Assets\icon-$(ProjectName).png" DestinationFiles="dist\icon.png"/>
+        <Copy SourceFiles="README.md" DestinationFiles="dist\README.md"/>
+        <!-- <Copy SourceFiles="CHANGELOG.md" DestinationFiles="dist\README.md" /> -->
+        <PropertyGroup>
+            <ManifestJson>
+                {
+                "name": "$(ProjectName)",
+                "version_number": "$(Version)",
+                "website_url": "https://github.com/SaigyoujiYusora/mu3-mods",
+                "description": "$(Description)",
+                "dependencies": [
+                "7EVENDAYSHOLIDAYS-BepInExPack-5.4.23002"
+                ]
+                }
+            </ManifestJson>
+        </PropertyGroup>
+
+        <WriteLinesToFile
+                File="dist\manifest.json"
+                Overwrite="true"
+                Lines="$(ManifestJson)"
+        />
+        <ZipDirectory SourceDirectory="dist" DestinationFile="..\..\dist\$(ProjectName)-$(Version).zip" Overwrite="false"/>
+    </Target>
+</Project>

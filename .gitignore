@@ -1,0 +1,11 @@
+.vs/
+**/bin/*
+**/obj/*
+**/dist/*
+_*/
+Common/*
+!Common/mscorlib.dll
+!Common/*.cs
+*.xcf
+publish.bat
+thunderstore.toml

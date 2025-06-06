@@ -1,0 +1,10 @@
+<Project>
+    <PropertyGroup>
+        <AssemblyName>Assembly-CSharp.UnLimitGift.mm</AssemblyName>
+        <Company>ChipTech</Company>
+        <Description>无限物品!</Description>
+        <Version>1.0.0</Version>
+        <OutCategory>enhancements</OutCategory>
+    </PropertyGroup>
+    <Import Project="..\..\Mu3Mods.csproj"/>
+</Project>
